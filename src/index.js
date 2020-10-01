@@ -16,7 +16,7 @@ module.exports = function toReadable (num) {
       10 : 'ten',
       11 : 'eleven',
       12 : 'twelve',
-      13 : 'therteen',
+      13 : 'thirteen',
       14 : 'fourteen',
       15 : 'fifteen',
       16 : 'sixteen',
@@ -27,7 +27,7 @@ module.exports = function toReadable (num) {
   
   let decadeNum = {
     2 : 'twenty',
-    3 : 'therty',
+    3 : 'thirty',
     4 : 'fourty',
     5 : 'fifty',
     6 : 'sixty',
