@@ -47,7 +47,7 @@ module.exports = function toReadable (num) {
       if (num < 20) return [teenNum[num]];
       return [decadeNum[Math.floor(num / 10)], simpleNum[num % 10]];
     }
-  if (num > 99){
+  if (num >= 100){
   result = [[simpleNum[Math.floor(num / 100)], 'hundred'], [less99(num % 100)]];}
   
   return result.flat(Infinity).join(' ').trim()
