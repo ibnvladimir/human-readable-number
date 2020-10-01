@@ -1,6 +1,6 @@
 module.exports = function toReadable (num) {
   let simpleNum = {
-    0 : undefined,
+  	  0 : '',
     1 : 'one', 
     2 : 'two', 
     3 : 'three',
@@ -36,13 +36,19 @@ module.exports = function toReadable (num) {
     9 : 'ninety',
   }
   
-  if (num === 0) return 'zero';
+  let result = 'zero'
   
-    
+  if (num === 0) return result;
+  
+  if (num < 100)    result = less99(num)
     
   function less99(num) {
       if (num < 10) return [simpleNum[num]];
       if (num < 20) return [teenNum[num]];
-      return [decadeNum[Math.floor(num / 10)], simpleNum[num % 10]]
-  }
+      return [decadeNum[Math.floor(num / 10)], simpleNum[num % 10]];
+    }
+  if (num > 99){
+  result = [[simpleNum[Math.floor(num / 100)], 'hundred'], [less99(num % 100)]];}
+  
+  return result.flat(Infinity).join(' ').trim()
 }
